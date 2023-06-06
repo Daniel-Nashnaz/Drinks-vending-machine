@@ -26,6 +26,7 @@ public class ClientHandler implements Runnable {
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 String request = in.readLine();
+                System.out.println(Thread.currentThread().getName());
                 System.out.println("Received request: " + request);
                 // Parse the request and start the appropriate drink preparation process
                 switch (request) {
